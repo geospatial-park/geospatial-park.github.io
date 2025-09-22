@@ -1,1 +1,10 @@
-
+/* Minimal layout and spacing */
+:root{--max:900px}
+body{font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; line-height:1.6; margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:1rem}
+.site-header{background:#f7f7f7;padding:.5rem 0;border-bottom:1px solid #e6e6e6}
+.site-header h1{display:inline;margin:0;font-size:1.15rem}
+.site-header nav{float:right}
+.site-header nav a{margin-left:1rem;text-decoration:none}
+.site-footer{font-size:.9rem;color:#666;padding:1rem 0;border-top:1px solid #eee;margin-top:2rem}
+main h2{margin-top:0}
