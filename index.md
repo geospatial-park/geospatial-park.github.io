@@ -14,7 +14,7 @@ title: Home
 I am **Jaehee Park**, a Visiting Assistant Professor in the Department of Geographic Information Science at the University of Redlands. My research centers on spatial data science, social sensing, human mobility, and urban analytics. I study how place, mobility, and social media intersect with public health and urban dynamics.
 
 - **Role:** Visiting Assistant Professor, University of Redlands  
-- **Email:** jpark1200@sdsu.edu  
+- **Email:** jaehee_park@redlands.edu  
 - **LinkedIn:** [linkedin.com/in/jaehee-park06](https://www.linkedin.com/in/jaehee-park06)
 
 ## Highlights
