@@ -25,3 +25,11 @@ My research focuses on **Spatial Data Science**, **Big Data and Social Media Ana
 
 - *Examining Human Mobility Changes During COVID-19 Across Socioeconomic Groups* — AAG Annual Meeting, 2025
 - *Social sensing for mental health* — AAG Annual Meeting, 2023
+
+# Research Projects
+
+Here are my project write-ups:
+
+{% for post in site.categories.research %}
+- [{{ post.title }}]({{ post.url }})
+{% endfor %}
