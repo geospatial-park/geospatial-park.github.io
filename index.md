@@ -1,7 +1,14 @@
-# Welcome to my Web Mapping Portfolio!
+---
+layout: default
+title: Home
+---
 
-Hi, I'm Jaehee Park. 
+# Welcome
 
-I'm a visiting Assistant Professor and teaching Web GIS.
+This is my personal website. Use the links in the header to jump to Teaching, Research, or my CV.
 
-**Stay tuned for updates!**
+## Quick links
+
+- [Teaching](/teaching/)
+- [Research](/research/)
+- [CV](/cv/)
