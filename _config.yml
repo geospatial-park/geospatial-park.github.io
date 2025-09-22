@@ -1,1 +1,8 @@
+title: "Jaehee Park"
+description: "Personal website"
+url: "https://geospatial-park.github.io" # replace USERNAME
+baseurl: "" # leave blank for user site, or set to "/repo" for project site
+markdown: kramdown
+permalink: pretty
 
+# optional: collections or plugins can be added later
