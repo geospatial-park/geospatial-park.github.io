@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leaflet Layers Control Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+</head>
+<body>
+    <div id="map" style="width: 1200px; height: 1000px"></div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- Camera Data -->
+    <script type="text/javascript" src="camera.js"></script>
+    
+    <script>
+        var dots = new L.LayerGroup(); 
+    
+        var mbAttr = 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+            '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="https://mapbox.com">Mapbox</a>',
+        mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWthbmU4OCIsImEiOiJjbWZ5aG9xMnQwbDdjMmpvZ2RvMGVnYWFqIn0.IgHU1MiM9BbPs4h0QA6_lA';
+
+        var grayscale   = L.tileLayer(mbUrl, {id: 'mapbox/light-v10', attribution: mbAttr}),
+            streets  = L.tileLayer(mbUrl, {id: 'mapbox/streets-v11', attribution: mbAttr});
+
+        var map = L.map('map', {
+            center: [39.30, -76.609],
+            zoom: 13,
+            layers: [grayscale]
+        });
+
+        for (var i = 0; i < data.length; i++) {
+            var point = data[i];
+            L.circle([point[0], point[1]], 40, {
+                color: 'blue',
+                fillColor: 'blue',
+                weight: 1,
+                fillOpacity: 0.3
+            }).addTo(dots);
+        }                    
+        map.addLayer(dots);    
+        
+        var baseLayers = {
+            "Grayscale": grayscale,
+            "Streets": streets
+        };
+
+        var overlays = {
+            "Cameras": dots
+        };
+
+        L.control.layers(baseLayers, overlays).addTo(map);
+    </script>
+</body>
+</html>

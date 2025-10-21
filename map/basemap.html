@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Leaflet Layers Control Example</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+	<div id="map" style="width: 1000px; height: 800px"></div>
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+	<script>
+	    var mbAttr = 'Map data &copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+				'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+				'Imagery © <a href="https://mapbox.com">Mapbox</a>',
+			mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWthbmU4OCIsImEiOiJjbWZ5aG9xMnQwbDdjMmpvZ2RvMGVnYWFqIn0.IgHU1MiM9BbPs4h0QA6_lA';
+
+	    var grayscale = L.tileLayer(mbUrl, {id: 'mapbox/light-v10', attribution: mbAttr}),
+		    streets  = L.tileLayer(mbUrl, {id: 'mapbox/streets-v11', attribution: mbAttr});
+
+		var map = L.map('map', {
+			center: [42.877742, -97.380979],
+			zoom: 3,
+			layers: [grayscale]
+		});
+
+		var baseLayers = {
+			"Grayscale": grayscale,
+			"Streets": streets
+		};
+
+		var overlays = {};
+
+		L.control.layers(baseLayers, overlays).addTo(map);
+	</script>
+</body>
+</html>
